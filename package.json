@@ -1,7 +1,7 @@
 {
   "name": "komari-theme-lunar",
   "type": "module",
-  "version": "1.0.10-lunar.1",
+  "version": "1.0.10-lunar.2",
   "packageManager": "bun@1.3.14",
   "author": {
     "name": "Foxtea267",

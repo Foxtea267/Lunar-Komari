@@ -13,6 +13,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 const require = createRequire(import.meta.url)
 const fs = require('node:fs')
 const archiver = require('archiver')
+const packageJson = require('./package.json')
 
 function getCommitHash(): string {
   try {
@@ -40,8 +41,7 @@ function komariThemeZip(): Plugin {
     name: 'komari-theme-zip',
     apply: 'build',
     closeBundle: async () => {
-      const commitHash = getCommitHash()
-      const zipFileName = `komari-theme-lunar-build-${commitHash}.zip`
+      const zipFileName = `${packageJson.version}.zip`
       const distDir = resolve(__dirname, 'dist')
       const themeJsonPath = resolve(__dirname, 'komari-theme.json')
       const previewPath = resolve(__dirname, 'docs/preview.png')
@@ -84,8 +84,6 @@ function komariThemeZip(): Plugin {
     },
   }
 }
-
-const packageJson = require('./package.json')
 
 export default defineConfig({
   define: {

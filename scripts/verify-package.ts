@@ -4,7 +4,7 @@ import { basename, resolve } from 'node:path'
 import process from 'node:process'
 
 const root = resolve(import.meta.dir, '..')
-const expectedPattern = /^komari-theme-lunar-build-(?:[0-9a-f]+|unknown)\.zip$/
+const expectedPattern = /^\d+\.\d+\.\d+(?:-[0-9A-Z.-]+)?\.zip$/i
 
 export function isProThemeArchiveName(fileName: string): boolean {
   return expectedPattern.test(fileName)

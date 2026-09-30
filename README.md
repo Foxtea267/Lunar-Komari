@@ -1,24 +1,28 @@
 # Lunar Komari
 
-一款面向 [Komari Monitor](https://github.com/komari-monitor/komari) 的紫色全球节点监控主题。Lunar Komari 在交互地球、节点状态和历史图表之上，加入节点可用性、负载波动、流量额度、成本与续费等展示能力。
+**Lunar-Komari 是 [Komari](https://github.com/komari-monitor/komari) 的第三方主题。** 它以紫色全球节点界面呈现 Komari 数据，并在交互地球、节点状态和历史图表之上加入节点可用性、负载波动、流量额度、成本与续费等展示能力。
 
-![Lunar Komari 首页预览](docs/preview.png)
+**在线演示：<https://monitor.arv.st>**
+
+<p align="center">
+  <a href="https://monitor.arv.st">
+    <img src="docs/preview.png" alt="Lunar Komari 桌面端首页" width="100%">
+  </a>
+</p>
+
+<p align="center"><sub>桌面端截图来自 monitor.arv.st</sub></p>
 
 ## 界面预览
 
-| 首页状态                                 | 节点可用性                                       |
-| ---------------------------------------- | ------------------------------------------------ |
-| ![首页状态](docs/effect-home-health.png) | ![节点可用性](docs/effect-availability-mode.png) |
+### 节点可用性
 
-| 波动节点弹窗（默认）                              | 波动节点独立页面（可选）                             |
-| ------------------------------------------------- | ---------------------------------------------------- |
-| ![波动节点弹窗](docs/effect-volatility-modal.png) | ![波动节点独立页面](docs/effect-volatility-page.png) |
+<p align="center"><img src="docs/effect-availability-mode.png" alt="节点可用性模式" width="100%"></p>
 
-| 手机端                                     |
-| ------------------------------------------ |
-| ![手机端首页](docs/effect-mobile-home.png) |
+### 手机端
 
-预览使用的是虚构节点和演示数据，不包含真实服务器信息。
+<p align="center"><img src="docs/effect-mobile-home.png" alt="Lunar Komari 手机端首页" width="360"></p>
+
+<p align="center"><sub>来自 monitor.arv.st；Android 14 Pixel 7 移动 UA，412 × 915 CSS 视口，触控模式</sub></p>
 
 ## 主要功能
 
@@ -72,7 +76,7 @@
 ### 使用 Release 主题包
 
 1. 打开 [Releases](https://github.com/Foxtea267/Lunar-Komari/releases/latest)。
-2. 下载名称以 `komari-theme-lunar-build-` 开头的 ZIP 文件。
+2. 下载以版本号命名的主题包，例如 `1.0.10-lunar.2.zip`。
 3. 登录 Komari 后台，进入“设置 → 主题管理 → 导入主题”。
 4. 上传下载的 ZIP，启用 **Lunar Komari** 并刷新前台。
 
@@ -134,7 +138,7 @@ bun run verify:package
 `bun run build` 会在仓库根目录生成可安装主题包：
 
 ```text
-komari-theme-lunar-build-<git-hash>.zip
+<version>.zip
 ```
 
 主题包根目录包含 `komari-theme.json`、`preview.png` 和编译后的 `dist/`。

@@ -57,16 +57,16 @@ describe('Pro release identity contract', () => {
     expect(renewalWarningDays).toMatchObject({ type: 'number', default: 30 })
   })
 
-  test('preserves the Komari archive contract under a Pro zip name', () => {
+  test('preserves the Komari archive contract under a version-only zip name', () => {
     const viteConfig = read('vite.config.ts')
 
-    expect(viteConfig).toMatch(/komari-theme-lunar-build-\$\{commitHash\}\.zip/)
+    expect(viteConfig).toMatch(/const zipFileName = `\$\{packageJson\.version\}\.zip`/)
     expect(viteConfig).toContain('archive.file(themeJsonPath, { name: \'komari-theme.json\' })')
     expect(viteConfig).toContain('archive.file(previewPath, { name: \'preview.png\' })')
     expect(viteConfig).toContain('archive.directory(distDir, \'dist\')')
     expect(manifest.preview).toBe('preview.png')
-    expect(isProThemeArchiveName('komari-theme-lunar-build-a1b2c3d.zip')).toBe(true)
-    expect(isProThemeArchiveName('komari-theme-lunar-build-unknown.zip')).toBe(true)
+    expect(isProThemeArchiveName('1.0.10-lunar.2.zip')).toBe(true)
+    expect(isProThemeArchiveName('1.0.10.zip')).toBe(true)
     expect(isProThemeArchiveName('komari-theme-emerald-globe-build-a1b2c3d.zip')).toBe(false)
   })
 
@@ -74,7 +74,7 @@ describe('Pro release identity contract', () => {
     const readme = read('README.md')
 
     expect(readme).toContain('https://github.com/Foxtea267/Lunar-Komari')
-    expect(readme).toContain('komari-theme-lunar-build-')
+    expect(readme).toContain('1.0.10-lunar.2.zip')
     expect(read('src/components/Footer.vue'))
       .toContain('https://github.com/Foxtea267/Lunar-Komari')
   })
